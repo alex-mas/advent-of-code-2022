@@ -1,21 +1,28 @@
 import day1 from "./day1";
 import day2 from "./day2";
 import day3 from "./day3";
+import day4 from "./day4";
 
 
 const solutions = [
   () => { }, //NO OP
   day1,
   day2,
-  day3
+  day3,
+  day4
 ]
 
 
 const args = process.argv.slice(2);
-
 const problem = Number(args[0]);
-const file = args[1];
-const part = Number(args[2]);
-const extraArgs = args.slice(3);
+let file: string | undefined;
+let part: number | undefined;
+args.forEach((arg) => {
+  if (arg.includes('--file')) {
+    file = './data/' + arg.split('--file=')[1];
+  } else if (arg.includes('--part')) {
+    part = Number(arg.split('--part=')[1]);
+  }
+});
 
-solutions[problem](file,part, ...extraArgs);
+solutions[problem](file, part, ...args);

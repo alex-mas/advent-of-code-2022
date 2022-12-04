@@ -22,7 +22,7 @@ const RoundOutcome = {
   Z: 6
 }
 
-export default (file = './data/day2.csv', part: number, ...args: string[]) => {
+export default (file = './data/day2.csv', part?: number, ...args: string[]) => {
   let totalScore1 = 0;
   let totalScore2 = 0;
   createReadStream(file)

@@ -6,5 +6,5 @@ yarn install
 ```
 
 ```
-yarn run [day number] ?[path to input file] ?[problem part]
+yarn run [day number] [--part=problem part] [--file=path to input file] [other arbitrary arguments]
 ```bash
