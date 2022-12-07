@@ -1,24 +1,8 @@
-import day1 from "./day1";
-import day2 from "./day2";
-import day3 from "./day3";
-import day4 from "./day4";
-import day5 from "./day5";
-import day6 from "./day6";
-
-
-const solutions = [
-  () => { }, //NO OP
-  day1,
-  day2,
-  day3,
-  day4,
-  day5,
-  day6
-]
-
-
 const args = process.argv.slice(2);
 const problem = Number(args[0]);
+if (isNaN(problem)) {
+  throw Error('Invalid problem name, please enter a number as the first parameter');
+}
 let file: string | undefined;
 let part: number | undefined;
 args.forEach((arg) => {
@@ -29,4 +13,7 @@ args.forEach((arg) => {
   }
 });
 
-solutions[problem](file, part, ...args);
+(async () => {
+  const module = await import(`./day${problem}`);
+  module.default(file, part, ...args);
+})();
