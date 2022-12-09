@@ -9,7 +9,7 @@ export default () => {
   const elves = [
     0
   ]
-  createReadStream('./data/day1.csv')
+  createReadStream('./data/day1.txt')
     .pipe(parse({ delimiter: EOL }))
     .on('data', function ([calories]) {
       if (calories === '') {

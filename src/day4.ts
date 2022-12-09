@@ -15,7 +15,7 @@ const isPartialOverlap = (elf1: number[], elf2: number[]) => {
   return (diff3 <= 0 && diff1 >= 0) ||
     (diff4 >= 0 && diff2 <= 0)
 }
-export default async (file = './data/day4.csv', part?: number, ...args: string[]) => {
+export default async (file = './data/day4.txt', part?: number, ...args: string[]) => {
   const data: number[][][] = [];
   await readInputFile(file, (row) => {
     const rowData: number[][] = [];

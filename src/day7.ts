@@ -25,7 +25,7 @@ const createTreeNode = (name: string, parent?: TreeNode, size: number = 0) => {
   }
 }
 
-export default async (file = './data/day7.csv', part?: number, ...args: string[]) => {
+export default async (file = './data/day7.txt', part?: number, ...args: string[]) => {
   let fileSystem: TreeNode = {
     name: 'root',
     size: 0,

@@ -16,7 +16,7 @@ export const processUntilUniqueCharSequence = (input: string[], length: number) 
   return -1;
 }
 
-export default async (file = './data/day6.csv', part?: number, ...args: string[]) => {
+export default async (file = './data/day6.txt', part?: number, ...args: string[]) => {
   let rows: string[][] = [];
   await readInputFile(file, ([row]) => {
     rows.push(row.split(''));

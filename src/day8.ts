@@ -1,6 +1,6 @@
 import { readInputFile } from "./utils";
 
-export default async (file = './data/day8.csv', part?: number, ...args: string[]) => {
+export default async (file = './data/day8.txt', part?: number, ...args: string[]) => {
   const grid: number[][] = [];
   await readInputFile(file, ([row]) => {
     grid.push(row.split('').map((tree) => Number(tree)));

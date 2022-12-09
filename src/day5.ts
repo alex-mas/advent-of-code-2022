@@ -12,7 +12,7 @@ const applyCommands = (commands: number[][], columns: string[][], reversePut = f
   });
 }
 
-export default async (file = './data/day5.csv', part?: number, ...args: string[]) => {
+export default async (file = './data/day5.txt', part?: number, ...args: string[]) => {
   const columns: string[][] = new Array(10);
   const commands: number[][] = [];
   let parsingCommands = false;

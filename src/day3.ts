@@ -8,7 +8,7 @@ const getObjectPriority = (object: string) => {
   return charCode >= 97 ? charCode - 96 : charCode - 38
 }
 
-export default (file = './data/day3.csv', part?: number, ...args: string[]) => {
+export default (file = './data/day3.txt', part?: number, ...args: string[]) => {
   const data: string[][] = [
   ];
   createReadStream(file)
