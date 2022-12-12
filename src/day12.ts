@@ -14,6 +14,7 @@ function reconstruct_path(cameFrom: Map<string, string>, currentNode: string) {
     }
     totalPath.push(current);
   }
+  totalPath.pop();
   return totalPath;
 }
 
@@ -119,9 +120,9 @@ export default async (file = './data/day12.txt', part?: number, ...args: string[
       return 1;
     }, heightmap);
     if (path) {
-      baselineL = path.length - 1;
+      baselineL = path.length;
       //console.log(JSON.stringify(path));
-      console.log(`Part 1: ${path.length - 1} - [${start}]`);
+      console.log(`Part 1: ${baselineL} - [${start}]`);
     }
 
   }
@@ -145,7 +146,7 @@ export default async (file = './data/day12.txt', part?: number, ...args: string[
         return 1;
       }, heightmap);
       if (!path) { continue; }
-      const len = path.length - 1;
+      const len = path.length;
       if (len <= minLen) {
         minLen = len;
         spot = cSpot;
