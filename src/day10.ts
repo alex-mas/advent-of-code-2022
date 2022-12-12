@@ -49,16 +49,14 @@ export default async (file = './data/day10.txt', part?: number, ...args: string[
     let sum = 0;
     for (let memory of program) {
       op++;
-      console.log(memory);
       if (op % 40 === 20) {
         sum += op * memory[0];
-        console.log(memory);
       }
     }
     console.log('Sum:', sum);
   }
   if (!part || part === 2) {
-    const screen = Array(6).fill('').map((arr) => Array(40).fill('.'));
+    const screen = Array(6).fill('').map((arr) => Array(40).fill(' '));
     const cpu = vm(defaultVm);
     const program = cpu(instructions);
     let col = 1;
