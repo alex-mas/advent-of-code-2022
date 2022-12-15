@@ -11,7 +11,7 @@ const CellValue = {
 
 const simulateSandFall = (data: number[][]) => {
   let fallenSandCount = 0;
-  let currentSand = [2000, 0];
+  let currentSand = [SAND_SOURCE_X, 0];
   while (true) {
     const down = currentSand[1] + 1;
     const left = currentSand[0] - 1;
@@ -35,7 +35,7 @@ const simulateSandFall = (data: number[][]) => {
       }
       fallenSandCount++;
       data[currentSand[1]][currentSand[0]] = CellValue.SAND;
-      currentSand = [2000, 0];
+      currentSand = [SAND_SOURCE_X, 0];
     }
   }
   return fallenSandCount;
@@ -50,9 +50,9 @@ const SAND_SOURCE_X = 2000;
 export default async (file = './data/day14.txt', part?: number, ...args: string[]) => {
   const data: number[][] = []
   for (let i = 0; i < 500; i++) {
-    data.push(Array(2500).fill(CellValue.EMPTY));
+    data.push(Array(SIM_WIDTH).fill(CellValue.EMPTY));
   }
-  data[0][2000] = CellValue.SAND_SOURCE;
+  data[0][SAND_SOURCE_X] = CellValue.SAND_SOURCE;
   let maxY = 0;
   await readInputFile(file, (row, index) => {
     let lastVertex: number[] | undefined = undefined;

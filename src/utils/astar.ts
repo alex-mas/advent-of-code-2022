@@ -1,4 +1,4 @@
-import { Vec2 } from "./types";
+import { Vec2 } from "../types";
 
 function reconstruct_path(cameFrom: Map<string, string>, currentNode: string) {
   const totalPath = [currentNode];

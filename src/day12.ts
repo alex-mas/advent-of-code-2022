@@ -1,5 +1,5 @@
-import { astar } from "./astar";
 import { readInputFile } from "./utils";
+import { astar } from "./utils/astar";
 
 
 export default async (file = './data/day12.txt', part?: number, ...args: string[]) => {
